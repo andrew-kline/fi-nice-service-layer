@@ -26,7 +26,7 @@ DEFAULT_DB_ENGINE: "Engine" = create_engine(
 @contextlib.contextmanager
 def get_session(engine: Optional["Engine"] = DEFAULT_DB_ENGINE) -> scoped_session:
     """
-    Create a thread-safe sqlalchemy Session 
+    Create a thread-safe sqlalchemy Session
 
     Example use:
         with get_session() as session:
@@ -37,7 +37,7 @@ def get_session(engine: Optional["Engine"] = DEFAULT_DB_ENGINE) -> scoped_sessio
         engine (Optional[Engine]): SQLAlchemy engine, default will utilize the database URL set via the environment
 
     Returns:
-        scoped_session    
+        scoped_session
     """
     sess_obj = scoped_session(sessionmaker(bind=engine))
     session = sess_obj()

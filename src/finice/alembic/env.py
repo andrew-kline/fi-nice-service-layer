@@ -5,9 +5,9 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from finice.db import Base
-from finice.accounts import models
-from finice.transactions import models
-from finice.users import models
+from finice.accounts import models as accounts_models  # noqa: F401
+from finice.transactions import models as transactions_models  # noqa: F401
+from finice.users import models as users_models  # noqa: F401
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
